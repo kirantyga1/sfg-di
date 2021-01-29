@@ -1,6 +1,7 @@
 package guru.springframework.sfgdi;
 
 import guru.springframework.sfgdi.controller.MyController;
+import guru.springframework.sfgdi.controller.PropertyInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,9 +14,14 @@ public class SfgDiApplication {
 
         MyController myController = (MyController) ctx.getBean("myController");
         String str = myController.sayHello();
-
         System.out.println(str);
-		System.out.println(ctx.getApplicationName());
+
+
+        System.out.println("Property---------------");
+        PropertyInjectedController  propertyInjectedController= (PropertyInjectedController) ctx.getBean("propertyInjectedController");
+
+
+        System.out.println(propertyInjectedController.getGreeting());
 
 
     }
