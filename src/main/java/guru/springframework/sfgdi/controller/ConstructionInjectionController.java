@@ -6,15 +6,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ConstructionInjectionController {
 
-      GreetingService greetingService;
+    public   GreetingService greetingService;
+
 
     public ConstructionInjectionController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
-    public ConstructionInjectionController(){
-
-    }
     public String getGreeting(){
         return greetingService.sayGreeting();
 
