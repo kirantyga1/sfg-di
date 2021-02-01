@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class SfgDiApplication {
 
-    public static <ConstructionInjectionController> void main(String[] args) {
+    public static  void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
         MyController myController = (MyController) ctx.getBean("myController");
@@ -27,9 +27,9 @@ public class SfgDiApplication {
         SetterBasedController setterBasedController= (SetterBasedController) ctx.getBean("setterBasedController");
         System.out.println(setterBasedController.getGreeting());
 
-//        System.out.println("Constructor Injection---------------");
-//        ConstructionInjectionController constructionInjectionController= (ConstructionInjectionController) ctx.getBean("constructionInjectionController");
-//        System.out.println(constructionInjectionController.getGreeting());
+        System.out.println("Constructor Injection---------------");
+        ConstructionInjectionController constructionInjectionController= (ConstructionInjectionController) ctx.getBean("constructionInjectionController");
+        System.out.println(constructionInjectionController.getGreeting());
 
 
     }
